@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Component</title>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+  <style type="text/css">
+    #container {
+      padding: 50px;
+      background-color: #fff;
+    }
+    .a {
+      padding: 10px;
+      margin: 10px;
+      display: inline-block;
+      background-color: #ffde00;
+      color: #333;
+      font-size: 32px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <script type="text/babel">
+    var Letter = React.createClass({
+      render: function () {
+        var letterStyle = {
+          padding: 10,
+          margin: 10,
+          backgroundColor: this.props.bgColor,
+          color: "#333",
+          display: "inline-block",
+          fontSize: 32,
+          textAlign: "center"
+        }
+        return (
+          <div className="" style={letterStyle}>
+            {this.props.children}
+          </div>
+        );
+      }
+    });
+    ReactDOM.render(
+      <div>
+        <Letter bgColor="#58B3FF">T</Letter>
+        <Letter bgColor="#FF605F">Y</Letter>
+        <Letter bgColor="#FFD52E">L</Letter>
+        <Letter bgColor="#49DD8E">E</Letter>
+        <Letter bgColor="#AE99FF">R</Letter>
+      </div>,
+      document.getElementById('container')
+    )
+  </script>
+</body>
+</html>
