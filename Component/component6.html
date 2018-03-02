@@ -12,11 +12,19 @@
 <body>
   <div id="container"></div>
   <script type="text/babel">
-
+    var style = {
+      color: "red",
+      border: "1px #000 solid"
+    };
+    var HelloWorld = React.createClass({
+      render: function() {
+        return <p>{this.props.name || "World"}</p>
+      }
+    });
 
     ReactDOM.render(
-      <div>
-        life circle
+      <div style={style}>
+        <HelloWorld name="sdsdsd"></HelloWorld>
       </div>,
       document.getElementById('container')
     )
